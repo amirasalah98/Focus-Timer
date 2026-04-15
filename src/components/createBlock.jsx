@@ -35,24 +35,24 @@ const handleCreate = () => {
   onChange={(e) => setFocus(e.target.value)} />
             </div>
             <div className="form-check radio-group my-4">
-                <input className="form-check-input" type="radio"
+                <input className="form-check-input " type="radio"
                  name="duration" id="radio1"
                   checked={duration===5} onChange={()=> {setDuration(5); setUnit("seconds");}} />
-                <label className="form-check-label" htmlFor="radio1">
+                <label className="form-check-label my-2" htmlFor="radio1">
                     5 seconds
                 </label>
             
-                <input className="form-check-input" type="radio"
+                <input className="form-check-input " type="radio"
                  name="duration" id="radio2"
                   checked={duration===15} onChange={()=> {setDuration(15); setUnit("mins");}}  />
-                <label className="form-check-label" htmlFor="radio2">
+                <label className="form-check-label my-2" htmlFor="radio2">
                     15 mins
                 </label>
             
                 <input className="form-check-input" type="radio"
                  name="duration" id="radio3" 
                   checked={duration===30} onChange={()=> {setDuration(30); setUnit("mins"); }} />
-                <label className="form-check-label" htmlFor="radio3">
+                <label className="form-check-label my-2" htmlFor="radio3">
                     30 mins
                 </label>
             </div>
