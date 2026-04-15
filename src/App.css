@@ -18,6 +18,9 @@ i,p,label,span{
   color: #888;
   padding: 2vw;
 }
+p{
+  padding: 1vw;
+}
 a,button{
   display: inline-block;
   background-color: #9370DB;
@@ -91,7 +94,12 @@ height: 40px;
     transform: rotate(360deg);
   }
 }
-
+.congrats{
+  color: #7156a7;
+}
+h3{
+  color: white;
+}
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;

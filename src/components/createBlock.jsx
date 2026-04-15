@@ -1,15 +1,17 @@
 import {Link} from 'react-router-dom'
 import { useState } from 'react';
 function CreateBlock (){
- const [duration, setDuration] = useState(30);
+ const [duration, setDuration] = useState(5);
  const [name, setName] = useState('');
 const [focus, setFocus] = useState('');
+const [unit, setUnit] = useState('seconds');
 const now = new Date();
 const handleCreate = () => {
   const blockData = {
     name,
     focus,
     duration,
+    unit,
     createdAt: now.toISOString(),
     createdAtDisplay: now.toLocaleTimeString()
   };
@@ -34,24 +36,24 @@ const handleCreate = () => {
             </div>
             <div className="form-check radio-group my-4">
                 <input className="form-check-input" type="radio"
-                 name="duration" id="radio30"
-                  checked={duration===30} onChange={()=> setDuration(30)} />
-                <label className="form-check-label" htmlFor="radio30">
-                    30 min
+                 name="duration" id="radio1"
+                  checked={duration===5} onChange={()=> {setDuration(5); setUnit("seconds");}} />
+                <label className="form-check-label" htmlFor="radio1">
+                    5 seconds
                 </label>
             
                 <input className="form-check-input" type="radio"
-                 name="duration" id="radio60"
-                  checked={duration===60} onChange={()=> setDuration(60)}  />
-                <label className="form-check-label" htmlFor="radio60">
-                    60 min
+                 name="duration" id="radio2"
+                  checked={duration===15} onChange={()=> {setDuration(15); setUnit("mins");}}  />
+                <label className="form-check-label" htmlFor="radio2">
+                    15 mins
                 </label>
             
                 <input className="form-check-input" type="radio"
-                 name="duration" id="radio90" 
-                  checked={duration===90} onChange={()=> setDuration(90)} />
-                <label className="form-check-label" htmlFor="radio90">
-                    90 min
+                 name="duration" id="radio3" 
+                  checked={duration===30} onChange={()=> {setDuration(30); setUnit("mins"); }} />
+                <label className="form-check-label" htmlFor="radio3">
+                    30 mins
                 </label>
             </div>
             <div className="d-flex justify-content-around">
